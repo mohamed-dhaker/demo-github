@@ -6,6 +6,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
 
   // Check if user already exists
+  // just for github
   const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
